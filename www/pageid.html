@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<body></body>
+<script type="module">
+  import { watch, mount } from 'https://cdn.jsdelivr.net/gh/ittedev/jito/jito.js'
+
+  let state = watch({
+    count: 0
+  })
+
+  setInterval(() => { state.count++ }, 1000)
+
+  mount(document.body, `Counter: {{ count }}`, [state])
+</script>
